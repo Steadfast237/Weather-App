@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Vollkorn', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #96f2d7;
+}
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #099268;
+  color: #e6fcf5;
+  padding: 16px;
+
+  h1 {
+    font-family: 'Rakkas', serif;
+    font-size: 4rem;
+    font-weight: 400;
+  }
+}
+
+.main {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 240px auto;
+
+  i.la-trash {
+    color: red;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 100%;
+    font-family: inherit;
+    font-weight: 700;
+    border: 0;
+    background-color: inherit;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    column-gap: 8px;
+  }
+
+  input {
+    border: 0;
+    font-size: 100%;
+    font-weight: 700;
+    font-family: inherit;
+    width: 100%;
+  }
+
+  input:read-only {
+    outline: 0;
+    background-color: inherit;
+  }
+
+  input:focus {
+    width: 100%;
+  }
+
+  form {
+    input {
+      padding: 4px 8px;
+      margin-bottom: 16px;
+      outline: 1px solid;
+    }
+
+    div.form-actions {
+      display: flex;
+      gap: 8px;
+
+      button {
+        outline: 1px solid;
+        justify-content: center;
+      }
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  aside {
+    grid-column: 1/2;
+    padding: 8px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: #20c997;
+    row-gap: 32px;
+
+    .active {
+      background-color: #087f5b;
+      color: #96f2d7;
+      font-weight: 900;
+    }
+
+    ul.default-projects {
+      li {
+        button {
+          text-align: left;
+        }
+      }
+    }
+
+    .dynamic-projects-container {
+      input {
+        width: 100%;
+        color: inherit;
+      }
+
+      ul.dynamic-projects {
+        li button i:last-child {
+          margin-left: auto;
+        }
+      }
+
+      ul + button {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .content {
+    grid-column: 2/3;
+    padding: 8px;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: capitalize;
+    }
+
+    ul {
+      li {
+        button {
+          align-items: center;
+        }
+      }
+    }
+
+    form {
+      input[type='text'] {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 8px;
+  text-align: center;
+}
