@@ -13,7 +13,11 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  background-color: #96f2d7;
+
+  background-image: url('./planet.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .container {
@@ -26,8 +30,6 @@ body {
 }
 
 .header {
-  background-color: #099268;
-  color: #e6fcf5;
   padding: 16px;
 
   h1 {
@@ -35,140 +37,110 @@ body {
     font-size: 4rem;
     font-weight: 400;
   }
+
+  h1 span {
+    color: #d43959;
+  }
 }
 
 .main {
   flex-grow: 1;
-  display: grid;
-  grid-template-columns: 240px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 16px;
 
-  i.la-trash {
-    color: red;
+  h3 {
+    font-family: 'Rakkas', serif;
+    font-weight: 400;
   }
 
-  ul {
-    list-style-type: none;
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  button {
-    width: 100%;
-    font-size: 100%;
-    font-family: inherit;
-    font-weight: 700;
-    border: 0;
-    background-color: inherit;
-    cursor: pointer;
-    padding: 8px;
-    display: flex;
-    column-gap: 8px;
-  }
-
-  input {
-    border: 0;
-    font-size: 100%;
-    font-weight: 700;
-    font-family: inherit;
-    width: 100%;
-  }
-
-  input:read-only {
-    outline: 0;
-    background-color: inherit;
-  }
-
-  input:focus {
-    width: 100%;
+  form,
+  .content {
+    max-width: 480px;
   }
 
   form {
-    input {
-      padding: 4px 8px;
-      margin-bottom: 16px;
-      outline: 1px solid;
-    }
-
-    div.form-actions {
-      display: flex;
-      gap: 8px;
-
-      button {
-        outline: 1px solid;
-        justify-content: center;
-      }
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
-  .hidden {
-    display: none;
+  input,
+  button {
+    appearance: none;
+    border: 1px solid;
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-size: 100%;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
   }
 
-  aside {
-    grid-column: 1/2;
-    padding: 8px;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    background-color: #20c997;
-    row-gap: 32px;
+  input {
+    padding: 4px 8px;
+  }
 
-    .active {
-      background-color: #087f5b;
-      color: #96f2d7;
-      font-weight: 900;
-    }
+  input:focus {
+    outline: none;
+    border: 1px solid #e6c065;
+  }
 
-    ul.default-projects {
-      li {
-        button {
-          text-align: left;
-        }
-      }
-    }
-
-    .dynamic-projects-container {
-      input {
-        width: 100%;
-        color: inherit;
-      }
-
-      ul.dynamic-projects {
-        li button i:last-child {
-          margin-left: auto;
-        }
-      }
-
-      ul + button {
-        margin-bottom: 16px;
-      }
-    }
+  button {
+    align-self: center;
+    font-weight: 900;
+    padding: 8px 32px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    background-color: #d48539;
   }
 
   .content {
-    grid-column: 2/3;
-    padding: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(230, 192, 101, 0.3);
+    border-radius: 5px;
+    font-size: 24px;
+  }
 
-    h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      text-transform: capitalize;
-    }
+  .temp-container {
+    display: flex;
+    gap: 16px;
+  }
 
-    ul {
-      li {
-        button {
-          align-items: center;
-        }
-      }
-    }
+  .temp {
+    font-size: 84px;
+  }
 
-    form {
-      input[type='text'] {
-        width: 100%;
-      }
-    }
+  .temp {
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    line-height: 1.07;
+  }
+
+  .after-temp {
+    font-size: 24px;
+    line-height: 1.28;
+    margin-left: -40px;
+    opacity: 0.6;
+  }
+
+  .temp-detail {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    gap: 16px;
+    padding: 32px;
+    border-radius: 5px;
+    border: 5px solid #d43959;
+  }
+
+  .temp-detail p {
+    text-transform: capitalize;
   }
 }
 
