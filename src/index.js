@@ -2,7 +2,7 @@ import './styles.css';
 
 async function getCityCurrentWeather(city) {
   const key = '9a88c63f925e48a6985111651240107';
-  const url = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${city}&aqui=no`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${key}&q=${city}&aqui=no`;
 
   try {
     const response = await fetch(url, { mode: 'cors' });
